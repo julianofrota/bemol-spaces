@@ -28,11 +28,10 @@ const Navigation = () => {
         <div className="flex items-center">
           <a href="/" className="flex items-center">
             <img 
-              src="https://www.bemol.com.br/assets/img-layout/logo-bemol.svg" 
-              alt="Bemol" 
-              className="h-8 md:h-10 transition-all duration-300"
+              src="/lovable-uploads/976fd8bd-8c22-4237-9751-2f1e53020e6a.png" 
+              alt="Bemol Spaces" 
+              className="h-10 md:h-12 transition-all duration-300"
             />
-            <span className="ml-2 font-semibold text-bemol-blue text-lg">Spaces</span>
           </a>
         </div>
 

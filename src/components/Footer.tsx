@@ -23,11 +23,10 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <img 
-                src="https://www.bemol.com.br/assets/img-layout/logo-bemol.svg" 
-                alt="Bemol" 
-                className="h-10 invert"
+                src="/lovable-uploads/976fd8bd-8c22-4237-9751-2f1e53020e6a.png" 
+                alt="Bemol Spaces" 
+                className="h-12 bg-white p-1 rounded"
               />
-              <span className="ml-2 font-semibold text-white text-xl">Spaces</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Impulsione suas vendas com a Bemol Spaces, uma plataforma completa de retail media para fornecedores que buscam destaque nas lojas físicas da Bemol no Norte do Brasil.
