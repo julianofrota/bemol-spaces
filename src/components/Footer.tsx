@@ -27,10 +27,10 @@ const Footer = () => {
                 alt="Bemol" 
                 className="h-10 invert"
               />
-              <span className="ml-2 font-semibold text-white text-xl">Media</span>
+              <span className="ml-2 font-semibold text-white text-xl">Spaces</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Impulsione suas vendas com a Bemol Media, uma plataforma completa de retail media para fornecedores que buscam destaque nas lojas físicas da Bemol no Norte do Brasil.
+              Impulsione suas vendas com a Bemol Spaces, uma plataforma completa de retail media para fornecedores que buscam destaque nas lojas físicas da Bemol no Norte do Brasil.
             </p>
             <form onSubmit={handleSubmit} className="flex gap-2 flex-col sm:flex-row">
               <div className="flex-grow">
@@ -92,8 +92,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:media@bemol.com.br" className="text-gray-400 hover:text-white transition-colors">
-                  media@bemol.com.br
+                <a href="mailto:spaces@bemol.com.br" className="text-gray-400 hover:text-white transition-colors">
+                  spaces@bemol.com.br
                 </a>
               </li>
             </ul>
@@ -116,7 +116,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} Bemol Media. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Bemol Spaces. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-gray-300 transition-colors">Termos de Uso</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Política de Privacidade</a>

@@ -32,7 +32,7 @@ const Navigation = () => {
               alt="Bemol" 
               className="h-8 md:h-10 transition-all duration-300"
             />
-            <span className="ml-2 font-semibold text-bemol-blue text-lg">Media</span>
+            <span className="ml-2 font-semibold text-bemol-blue text-lg">Spaces</span>
           </a>
         </div>
 

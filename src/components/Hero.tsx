@@ -40,16 +40,21 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-10"></div>
         <video
           autoPlay
           loop
           muted
           playsInline
           className="absolute w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1613160717888-fec8b8c14eb4?q=80&w=1920&auto=format&fit=crop"
         >
           <source src="https://cdn.coverr.co/videos/coverr-retail-store-interior-4379/1080p.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <img 
+            src="https://images.unsplash.com/photo-1613160717888-fec8b8c14eb4?q=80&w=1920&auto=format&fit=crop" 
+            alt="Loja Bemol interior" 
+            className="absolute w-full h-full object-cover"
+          />
         </video>
       </div>
 
@@ -60,7 +65,7 @@ const Hero = () => {
           className="max-w-4xl mx-auto text-center opacity-0 transition-all duration-1000"
         >
           <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 animate-fade-in">
-            BEMOL RETAIL MEDIA
+            BEMOL SPACES
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Conquiste os melhores espaços nas lojas Bemol
