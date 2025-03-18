@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BemolLogo from './BemolLogo';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,11 +27,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/976fd8bd-8c22-4237-9751-2f1e53020e6a.png" 
-              alt="Bemol Spaces" 
-              className="h-10 md:h-12 transition-all duration-300"
-            />
+            <BemolLogo className="h-10 w-auto transition-all duration-300" />
           </a>
         </div>
 

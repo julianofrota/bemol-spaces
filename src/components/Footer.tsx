@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import BemolLogo from './BemolLogo';
 
 const Footer = () => {
   const { toast } = useToast();
@@ -22,11 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
-              <img 
-                src="/lovable-uploads/976fd8bd-8c22-4237-9751-2f1e53020e6a.png" 
-                alt="Bemol Spaces" 
-                className="h-12 bg-white p-1 rounded"
-              />
+              <BemolLogo variant="light" className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Impulsione suas vendas com a Bemol Spaces, uma plataforma completa de retail media para fornecedores que buscam destaque nas lojas físicas da Bemol no Norte do Brasil.
