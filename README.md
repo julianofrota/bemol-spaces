@@ -1,69 +1,161 @@
-# Welcome to your Lovable project
+# Bemol Spaces
 
-## Project info
+Sistema de catálogo e reserva de espaços de mídia.
 
-**URL**: https://lovable.dev/projects/9a24f59d-d99b-4ffd-9423-70541e26343f
+## 🚀 Tecnologias
 
-## How can I edit this code?
+- React + TypeScript
+- Vite
+- Supabase
+- TailwindCSS
+- Radix UI
+- React Query
+- React Hook Form + Zod
+- Framer Motion
 
-There are several ways of editing your application.
+## 📋 Pré-requisitos
 
-**Use Lovable**
+- Node.js 18+
+- npm ou yarn
+- Conta no Supabase
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9a24f59d-d99b-4ffd-9423-70541e26343f) and start prompting.
+## 🔧 Instalação
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/bemol-spaces.git
+cd bemol-spaces
+```
 
-**Use your preferred IDE**
+2. Instale as dependências
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. Configure as variáveis de ambiente
+```bash
+cp .env.example .env
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Inicie o servidor de desenvolvimento
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🌐 Estrutura do Projeto
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/     # Componentes reutilizáveis
+├── pages/         # Páginas da aplicação
+├── services/      # Serviços de API
+├── hooks/         # Custom hooks
+├── contexts/      # Contextos React
+├── lib/           # Utilitários e configurações
+├── types/         # Definições de tipos TypeScript
+└── data/          # Dados mockados para desenvolvimento
+```
 
-**Use GitHub Codespaces**
+## 🔌 Integração com Backend
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+O projeto está configurado para consumir APIs RESTful. Para desenvolvimento, utiliza dados mockados, mas pode ser facilmente configurado para usar a API real.
 
-## What technologies are used for this project?
+### Configuração da API
 
-This project is built with .
+1. Configure a URL da API no arquivo `.env`:
+```env
+VITE_API_URL=http://seu-backend.com/api
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. Endpoints disponíveis:
+- `GET /spaces` - Lista todos os espaços
+- `GET /spaces/:id` - Obtém detalhes de um espaço
+- `GET /reservations` - Lista todas as reservas
+- `POST /reservations` - Cria uma nova reserva
+- `DELETE /reservations/:id` - Cancela uma reserva
 
-## How can I deploy this project?
+### Autenticação
 
-Simply open [Lovable](https://lovable.dev/projects/9a24f59d-d99b-4ffd-9423-70541e26343f) and click on Share -> Publish.
+O sistema utiliza autenticação via JWT. O token é armazenado no localStorage e enviado automaticamente em todas as requisições.
 
-## I want to use a custom domain - is that possible?
+## 🎨 Componentes Principais
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### SpaceCard
+Componente que exibe informações básicas de um espaço de mídia.
+
+```typescript
+interface SpaceCardProps {
+  space: MediaSpace;
+  onSelect: (space: MediaSpace) => void;
+}
+```
+
+### SpaceDetails
+Modal que exibe informações detalhadas de um espaço.
+
+```typescript
+interface SpaceDetailsProps {
+  space: MediaSpace | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+```
+
+### DashboardStats
+Componente que exibe estatísticas do dashboard.
+
+```typescript
+interface DashboardStatsProps {
+  totalReservations: number;
+  activeReservations: number;
+  totalInvestment: number;
+  estimatedImpact: number;
+}
+```
+
+## 🔄 Hooks Personalizados
+
+### useSpaces
+Hook para gerenciar dados de espaços e reservas.
+
+```typescript
+const {
+  spaces,
+  reservations,
+  isLoading,
+  error,
+  getSpaceById,
+  reserveSpace,
+  cancelReservation
+} = useSpaces();
+```
+
+## 📝 Scripts Disponíveis
+
+- `npm run dev`: Inicia o servidor de desenvolvimento
+- `npm run build`: Cria a build de produção
+- `npm run preview`: Visualiza a build de produção
+- `npm run lint`: Executa o linter
+- `npm run test`: Executa os testes
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👥 Autores
+
+- Seu Nome - [@seu-usuario](https://github.com/seu-usuario)
+
+## 🙏 Agradecimentos
+
+- [Shadcn/UI](https://ui.shadcn.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [React Query](https://tanstack.com/query/latest)

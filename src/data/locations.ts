@@ -1,136 +1,233 @@
+import { StoreLocation, StoreSector } from '@/types';
 
-export interface StoreLocation {
-  id: string;
-  name: string;
-  address: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  phone: string;
-  email: string;
-  coordinates: {
-    lat: number;
-    lng: number;
-  };
-  storeSize: 'small' | 'medium' | 'large';
-  footTraffic: number; // Average visitors per day
-  openingHours: {
-    weekdays: string;
-    saturday: string;
-    sunday: string;
-  };
-  imageUrl: string;
-}
+const availableSectors: StoreSector[] = [
+  'Salão',
+  'Autosserviço',
+  'Linha Branca',
+  'Móveis',
+  'Telefonia',
+  'Eletrônicos'
+];
 
 export const storeLocations: StoreLocation[] = [
   {
-    id: "store-001",
-    name: "Bemol Manaus - Centro",
-    address: "Av. Eduardo Ribeiro, 520",
-    city: "Manaus",
-    state: "AM",
-    postalCode: "69010-010",
-    phone: "(92) 3232-9900",
-    email: "centro@bemol.com.br",
-    coordinates: {
-      lat: -3.1313,
-      lng: -60.0231
-    },
-    storeSize: "large",
-    footTraffic: 2500,
+    id: '1',
+    name: 'Bemol Manaus Shopping',
+    address: 'Av. Djalma Batista, 482 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-010',
+    phone: '(92) 2121-2121',
     openingHours: {
-      weekdays: "09:00 - 19:00",
-      saturday: "09:00 - 18:00",
-      sunday: "12:00 - 17:00"
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
     },
-    imageUrl: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    storeSize: 'large',
+    footTraffic: 50000,
+    imageUrl: '/images/stores/manaus-shopping.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: availableSectors
   },
   {
-    id: "store-002",
-    name: "Bemol Manaus - Shopping Manauara",
-    address: "Av. Mário Ypiranga, 1300 - Adrianópolis",
-    city: "Manaus",
-    state: "AM",
-    postalCode: "69057-002",
-    phone: "(92) 3232-9950",
-    email: "manauara@bemol.com.br",
-    coordinates: {
-      lat: -3.1003,
-      lng: -60.0233
-    },
-    storeSize: "medium",
-    footTraffic: 3000,
+    id: '2',
+    name: 'Bemol Manauara',
+    address: 'Av. Mário Ypiranga Monteiro, 1300 - Adrianópolis',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69057-002',
+    phone: '(92) 2121-2122',
     openingHours: {
-      weekdays: "10:00 - 22:00",
-      saturday: "10:00 - 22:00",
-      sunday: "14:00 - 20:00"
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
     },
-    imageUrl: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
+    storeSize: 'large',
+    footTraffic: 45000,
+    imageUrl: '/images/stores/manauara.jpg',
+    coordinates: {
+      lat: -3.0977,
+      lng: -60.0253
+    },
+    sectors: availableSectors
   },
   {
-    id: "store-003",
-    name: "Bemol Manaus - Cidade Nova",
-    address: "Av. Noel Nutels, 1762 - Cidade Nova",
-    city: "Manaus",
-    state: "AM",
-    postalCode: "69095-000",
-    phone: "(92) 3232-9930",
-    email: "cidadenova@bemol.com.br",
-    coordinates: {
-      lat: -3.0413,
-      lng: -59.9478
-    },
-    storeSize: "large",
-    footTraffic: 2200,
+    id: '3',
+    name: 'Bemol Manaus Plaza',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2123',
     openingHours: {
-      weekdays: "09:00 - 19:00",
-      saturday: "09:00 - 18:00",
-      sunday: "09:00 - 15:00"
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
     },
-    imageUrl: "https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
   },
   {
-    id: "store-004",
-    name: "Bemol Boa Vista",
-    address: "Av. Ville Roy, 1725 - Caçari",
-    city: "Boa Vista",
-    state: "RR",
-    postalCode: "69307-725",
-    phone: "(95) 3628-4300",
-    email: "boavista@bemol.com.br",
-    coordinates: {
-      lat: 2.8235,
-      lng: -60.6758
-    },
-    storeSize: "medium",
-    footTraffic: 1800,
+    id: '4',
+    name: 'Bemol Manaus Plaza Shopping',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2124',
     openingHours: {
-      weekdays: "09:00 - 19:00",
-      saturday: "09:00 - 18:00",
-      sunday: "09:00 - 15:00"
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
     },
-    imageUrl: "https://images.unsplash.com/photo-1555196301-9acc011dfde2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
   },
   {
-    id: "store-005",
-    name: "Bemol Porto Velho",
-    address: "Av. Carlos Gomes, 1223 - Centro",
-    city: "Porto Velho",
-    state: "RO",
-    postalCode: "76801-123",
-    phone: "(69) 3224-5000",
-    email: "portovelho@bemol.com.br",
-    coordinates: {
-      lat: -8.7612,
-      lng: -63.9099
-    },
-    storeSize: "medium",
-    footTraffic: 1700,
+    id: '5',
+    name: 'Bemol Manaus Plaza Shopping II',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2125',
     openingHours: {
-      weekdays: "09:00 - 19:00",
-      saturday: "09:00 - 18:00",
-      sunday: "Fechado"
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
     },
-    imageUrl: "https://images.unsplash.com/photo-1514481538271-cf9f99627dc4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-2.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
+  },
+  {
+    id: '6',
+    name: 'Bemol Manaus Plaza Shopping III',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2126',
+    openingHours: {
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
+    },
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-3.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
+  },
+  {
+    id: '7',
+    name: 'Bemol Manaus Plaza Shopping IV',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2127',
+    openingHours: {
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
+    },
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-4.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
+  },
+  {
+    id: '8',
+    name: 'Bemol Manaus Plaza Shopping V',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2128',
+    openingHours: {
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
+    },
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-5.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
+  },
+  {
+    id: '9',
+    name: 'Bemol Manaus Plaza Shopping VI',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2129',
+    openingHours: {
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
+    },
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-6.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
+  },
+  {
+    id: '10',
+    name: 'Bemol Manaus Plaza Shopping VII',
+    address: 'Av. Djalma Batista, 2020 - Chapada',
+    city: 'Manaus',
+    state: 'AM',
+    postalCode: '69050-020',
+    phone: '(92) 2121-2130',
+    openingHours: {
+      weekdays: '09:00 - 22:00',
+      saturday: '09:00 - 22:00',
+      sunday: '12:00 - 20:00'
+    },
+    storeSize: 'large',
+    footTraffic: 40000,
+    imageUrl: '/images/stores/manaus-plaza-shopping-7.jpg',
+    coordinates: {
+      lat: -3.1190,
+      lng: -60.0217
+    },
+    sectors: ['Eletrônicos', 'Eletrodomésticos', 'Móveis', 'Cama, Mesa e Banho', 'Moda', 'Alimentos']
   }
 ];
