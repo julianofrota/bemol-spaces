@@ -23,7 +23,7 @@ Sistema de catálogo e reserva de espaços de mídia.
 
 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/bemol-spaces.git
+git clone https://github.com/julianofrota/bemol-spaces.git
 cd bemol-spaces
 ```
 
